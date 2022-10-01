@@ -1,26 +1,54 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "nirvasa-api": ["nirvasa-api"],
+      "boot": ["app/boot"],
+      "components": ["app/components"],
+      "containers": ["app/containers"],
+      "services": ["app/services"],
+      "constants": ["app/constants"],
+      "common": ["app/common"],
+      "hooks": ["app/hooks"],
+      "helpers": ["app/helpers"],
+      "store": ["app/store"],
+      "types": ["app/types"],
+      "public": ["public"],
+
+      "nirvasa-api/*": ["nirvasa-api/*"],
+      "boot/*": ["app/boot/*"],
+      "components/*": ["app/components/*"],
+      "containers/*": ["app/containers/*"],
+      "services/*": ["app/services/*"],
+      "constants/*": ["app/constants/*"],
+      "common/*": ["app/common/*"],
+      "hooks/*": ["app/hooks/*"],
+      "helpers/*": ["app/helpers/*"],
+      "store/*": ["app/store/*"],
+      "types/*": ["app/types/*"],
+      "public/*": ["public/*"],
+    }
   },
   "include": [
-    "src"
-  ]
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next.config.js",
+    ".eslintrc.js"
+  ],
+  "exclude": ["node_modules"],
+  "types": ["google.accounts", "facebook-js-sdk"]
 }
