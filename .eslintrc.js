@@ -82,5 +82,12 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 'off',
     'react/destructuring-assignment': 'off',
     'no-nested-ternary': 'off',
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
 };

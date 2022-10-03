@@ -1,0 +1,33 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.wrapper {
+  width: 84vw;
+  margin: 0 auto;
+  background-image: url('../../images/forex.jpg');
+
+  @include media($tablet) {
+    width: 94vw;
+  }
+
+  .selectWrapper {
+    margin: rem(40px) rem(40px) rem(10px);
+    padding-top: rem(10px);
+
+    @include media($tablet) {
+      margin: rem(90px) rem(40px) rem(10px);
+    }
+  }
+
+  .tableWrapper {
+    display: grid;
+    grid-template: auto / 8fr 1.5fr 2.5fr;
+    gap: rem(2px) rem(10px);
+    padding: 0 rem(10px) rem(10px);
+
+    span {
+      padding-left: rem(10px);
+      background: #fff;
+    }
+  }
+}

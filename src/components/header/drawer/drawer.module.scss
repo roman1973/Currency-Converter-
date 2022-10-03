@@ -1,0 +1,42 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.drawer {
+  display: grid;
+  width: calc(100% - 32px);
+  max-width: 428px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  transform: translateX(0px);
+  transition: $transitionAll;
+  z-index: 110;
+  overflow: auto;
+  padding: rem(100px) 16px;
+  
+  &.close {
+    transform: translateX(480px);
+  }
+  
+  &.noDrawerAnimate {
+    transition: none;
+  }
+  
+  .closeButton {
+    justify-self: center;
+    align-self: end; 
+    margin-top: rem(90px);
+    border-radius: 50px;
+    box-shadow: 1px 4px 26px rgba(157, 161, 176, 0.25);
+    cursor: pointer;
+    
+    @include media($tablet) {
+      margin-top: rem(60px);
+    }
+  }
+}
+  
+  ul {
+    display: grid;
+  }

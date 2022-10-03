@@ -1,0 +1,70 @@
+// px to rem
+@function rem($size) {
+    $remSize: calc($size / 16px);
+    @return #{$remSize}rem;
+}
+  
+@function vw($size) {
+  $vwSize: calc($size / 1920px * 100);
+  @return #{$vwSize}vw;
+}
+  
+  @mixin media($max) {
+    @media screen and (max-width: $max) {
+      @content;
+    }
+  }
+  
+  @mixin media-min-max($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+    
+  /* mixin for flex */
+  @mixin flex($direction: null, $justify: null, $align: null, $wrap: null) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+  }
+  
+  /* mixin for Poppins font-family */
+  @mixin font($line-height: null, $font-weight: 600, $font-size: null, $color: null, $font-family: null) {
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+    font-weight: $font-weight;
+  }
+  
+  /* mixin for position absolute and fixed */
+  @mixin position($position, $top: null, $left: null, $right: null, $bottom: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+  
+  @mixin ellipsis($lineCount) {
+    @if $lineCount == 1 {
+      display: block;
+      white-space: nowrap;
+    } @else {
+      display: -webkit-box;
+    }
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lineCount;
+  }
+    
+  @mixin button {
+    width: max-content;
+    padding: rem(12px) rem(24px);
+    border: $border-1px;
+    border-radius: $large-radius;
+  }

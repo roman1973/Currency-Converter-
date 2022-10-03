@@ -1,0 +1,78 @@
+/* font imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* fonts */
+$font-poppins: 'Poppins', sans-serif;
+
+/* colors */
+$strong-text: #121212;
+$medium-text: #424242;
+$medium-light-text: #7a7f8b99;
+$light-text: #afb2b9;
+$light-line: #7a7f8b66;
+$medium-line: rgba(122, 127, 139, 0.2);
+$light-dot: #CACCD1;
+$light-dot: #caccd1;
+$link-active: #f1af2e;
+$color-puerto-rico: #41b9a8;
+$color-puerto-rico-light: rgba(65, 185, 168, 0.2);
+
+
+/*White*/
+$white: #ffffff;
+$white20: rgba(255, 255, 255, 0.2);
+$white60: rgba(255, 255, 255, 0.6);
+$white90: rgba(255, 255, 255, 0.9);
+
+/*Black*/
+$black20: rgba(0, 0, 0, 0.2);
+$black-gradient: linear-gradient(
+  0deg,
+  rgba(18, 18, 18, 0.54),
+  rgba(18, 18, 18, 0.54)
+);
+
+/*Gray*/
+$gray: #e7e7e7;
+
+$gray-transparent: rgba(18, 18, 18, 0.2);
+$gray-transparent-light: rgba(198, 202, 231, 0.1);
+
+/*Yellow*/
+$yellow: #f1af2e;
+
+/*Rose*/
+$rose: #ff6388;
+$rose-light: #ff63880d;
+
+// breakpoints
+$desktop: 1920px;
+$scaled-desktop: 1500px;
+$laptop-l: 1440px;
+$laptop-m: 1260px;
+$laptop: 1024px;
+$laptop-s: 910px;
+$tablet: 768px;
+$tablet-m: 620px;
+$mobile-l: 428px;
+$mobile-m: 375px;
+$mobile-s: 320px;
+
+$transition-time: 0.3s;
+$transitionAll: all $transition-time ease-in-out;
+
+$border-2px: 1px solid $strong-text;
+$border-1px: 1px solid $strong-text;
+$border-line: 1px solid $light-line;
+$border-dot-line: 0.803855px solid $medium-line;
+
+// radius
+$large-radius: 50px;
+$big-radius: 12px;
+$medium-radius: 10px;
+$small-radius: 8px;
+$tiny-radius: 5px;
+
+//shadows
+$shadow-header: 0px 4px 20px rgba(107, 115, 138, 0.1);
+$shadow-blur24: 0 4px 10px rgba(107, 115, 138, 0.1);

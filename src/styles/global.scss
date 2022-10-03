@@ -1,0 +1,115 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+html,
+body {
+  --font-size: 16px;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  color: $strong-text;
+  padding: 0;
+  margin: 0;
+  @include font($font-family: $font-poppins,$font-size: var(--font-size));
+ 
+  @include media($laptop-m) {
+    --font-size: 13px;
+  }
+}
+
+div {
+  box-sizing: border-box;
+}
+
+p, ol, ul, h1, h2, h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0; 
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+ 
+  li {
+    list-style-type: none;
+  }
+}
+
+p {
+  font-weight: normal;
+}
+
+main {
+  min-height: calc(100vh - rem(284px));  
+  padding-top: rem(150px);
+  background-size: cover;
+  background-repeat: repeat;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.85)
+  ), url('../images/money.jpg');
+
+  @include media($tablet) {
+    min-height: calc(100vh - rem(272px));  
+    padding-top: rem(142px)
+  }
+  
+  @include media($mobile-l) {
+    min-height: calc(100vh - rem(190px));  
+    padding-top: rem(60px);
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  padding: rem(12px) rem(24px);
+  border-radius: $large-radius;
+  cursor: pointer;
+  transition: $transitionAll;
+
+  &.border {
+    border: $border-1px;
+  }
+
+  &.backGr {
+    color: $white;
+    background: $strong-text;
+  }
+
+  @include media($laptop-m) {
+    padding: rem(10px) rem(20px);
+  }
+
+  svg {
+    margin-left: 8px;
+  }
+}
+
+/* ======================================================== 
+    Browser scroll styles
+=========================================================== */
+
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  height: 6px;
+  border: 4px solid rgba(0, 0, 0, 0); // thumb width
+  background-clip: padding-box;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: $link-active; // thumb color
+}

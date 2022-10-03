@@ -1,0 +1,61 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.headerWrapper {
+    @include flex($justify: space-between, $align: center);
+    width: 100%;
+    max-width: $laptop-l;
+    position: fixed;
+    top: 0;
+    padding: rem(27px) rem(66px);
+    background: $white90;
+    transition: $transitionAll;
+  
+    &.hidden {
+      top: rem(-190px);
+    }  
+    
+    &.shadow {
+      // padding: rem(27px) rem(66px);
+      box-shadow: $shadow-header;
+      z-index: 10;
+    }
+    
+    .navigationWrapper {
+      width: 40vw;
+
+      ul {
+        @include flex($justify: space-between, $align: center);
+        
+        a {
+          padding: rem(10px) 0;
+
+          &:hover {
+            border-top: 2px solid $strong-text;
+          }
+
+          &.link {
+            color: $strong-text;
+          }
+  
+          &.active {
+            color: $link-active;
+          } 
+        } 
+        
+      }
+    }
+  
+    @include media($laptop-m) {
+      padding: rem(27px) rem(30px);
+  
+      &.shadow {
+        padding: rem(27px) rem(30px);
+      }
+    }
+  
+    @include media($mobile-l) {
+      padding: rem(27px) rem(20px);
+    }
+  }
+  
