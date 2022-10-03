@@ -14,6 +14,7 @@
   z-index: 110;
   overflow: auto;
   padding: rem(100px) 16px;
+  background: $light-dot;
   
   &.close {
     transform: translateX(480px);

@@ -46,7 +46,7 @@ p {
 }
 
 main {
-  min-height: calc(100vh - rem(284px));  
+  min-height: calc(100vh - rem(320px));  
   padding-top: rem(150px);
   background-size: cover;
   background-repeat: repeat;
@@ -57,13 +57,13 @@ main {
   ), url('../images/money.jpg');
 
   @include media($tablet) {
-    min-height: calc(100vh - rem(272px));  
+    min-height: calc(100vh - rem(315px));  
     padding-top: rem(142px)
   }
   
   @include media($mobile-l) {
-    min-height: calc(100vh - rem(190px));  
-    padding-top: rem(60px);
+    min-height: calc(100vh - rem(290px));  
+    padding-top: rem(120px);
   }
 }
 

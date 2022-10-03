@@ -8,7 +8,7 @@ export interface NavList {
 export interface ConvertParams {
   from: string;
   to: string;
-  amount: string;
+  amount: number;
 }
 
 export interface SymbolResponse {

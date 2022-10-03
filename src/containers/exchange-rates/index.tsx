@@ -1,24 +1,22 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import RatesTable from 'components/rates-table';
 import Spinner from 'common/spinner';
 import { useGetCurrencysRateQuery } from 'app/api';
-import { useAppSelector, useAppDispatch } from 'app/hooks';
-import { baseUpdate, logoActionUpdate } from 'app/store';
+import { useAppSelector, useAppDispatch, useLogoActionEffect } from 'app/hooks';
+import { baseUpdate } from 'app/store';
+import { Option } from 'types';
 
 interface Props {
-  symbols?: Record<string, string>;
+  options?: Option[];
 }
-const ExchangeRates: React.FC<Props> = ({ symbols }) => {
+const ExchangeRates: React.FC<Props> = ({ options }) => {
   const base = useAppSelector((state) => state.currency.base);
 
   const { data, isLoading, isSuccess, isError, error } = useGetCurrencysRateQuery(base);
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    dispatch(logoActionUpdate(true));
-    setTimeout(() => dispatch(logoActionUpdate(false)), 700);
-  }, [data?.rates]);
+  useLogoActionEffect([data?.rates]);
 
   let content;
 
@@ -30,7 +28,7 @@ const ExchangeRates: React.FC<Props> = ({ symbols }) => {
     content = (
       <RatesTable
         rates={data.rates}
-        symbols={symbols}
+        options={options}
         base={base}
         onUpdate={(base: string) => dispatch(baseUpdate(base))}
       />

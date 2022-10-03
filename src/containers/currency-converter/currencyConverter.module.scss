@@ -1,0 +1,58 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.wrapper {
+  width: 65vw;
+  margin: rem(40px) auto rem(20px); 
+  padding-bottom: rem(20px);
+
+  @include media($tablet) {
+    width: 94vw;
+  }
+
+  .formWrapper {
+    display:grid;
+    grid-template: auto / repeat(2, 3fr) 1fr 3fr;
+    gap: rem(20px);
+
+    @include media($tablet) {
+      grid-template: auto / 1fr;
+    }
+
+    .word {
+      font-size: rem(30px);
+      align-self: center;
+      justify-self: center;
+      color: $link-active;
+    }
+
+    .fieldWrapper {
+      @include flex($direction: column);
+      
+      input[type='number'] {
+        min-height: 38px;
+        font-size: rem(20px);
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding-left: 8px;
+      }
+    }
+  }
+
+  .resultWrapper {
+    @include flex($direction: column, $justify: center, $align: center);
+
+    margin-top: rem(30px);
+
+    .result {
+      font-size: rem(40px);
+      color: $color-red;
+    }
+
+    .currency {
+      font-size: rem(30px);
+      color: $color-puerto-rico;
+    }
+  }
+}

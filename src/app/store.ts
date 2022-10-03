@@ -6,7 +6,7 @@ interface CurrencyState {
   base: string;
   from: string;
   to: string;
-  count: number;
+  amount: number;
   logoAction: boolean;
 }
 
@@ -14,7 +14,7 @@ const initialState: CurrencyState = {
   base: 'USD',
   from: 'USD',
   to: 'EUR',
-  count: 1,
+  amount: 1,
   logoAction: false,
 };
 const currencySlice = createSlice({
@@ -30,8 +30,8 @@ const currencySlice = createSlice({
     toUpdate: (state, action: PayloadAction<string>) => {
       state.to = action.payload;
     },
-    countUpdate: (state, action: PayloadAction<number>) => {
-      state.count = action.payload;
+    amountUpdate: (state, action: PayloadAction<number>) => {
+      state.amount = action.payload;
     },
     logoActionUpdate: (state, action: PayloadAction<boolean>) => {
       state.logoAction = action.payload;
@@ -50,4 +50,4 @@ export const store = configureStore({
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
-export const { baseUpdate, fromUpdate, toUpdate, countUpdate, logoActionUpdate } = currencySlice.actions;
+export const { baseUpdate, fromUpdate, toUpdate, amountUpdate, logoActionUpdate } = currencySlice.actions;
