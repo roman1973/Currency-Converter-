@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import cn from 'classnames';
 import { nanoid } from 'nanoid';
-import { NavLink, Location } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { scrollToTop } from 'utils';
 import { NavList } from 'types';
@@ -11,12 +11,11 @@ import styles from './drawer.module.scss';
 
 interface Props {
   isOpen: boolean;
-  location: Location;
   onClose: () => void;
   navList: NavList[];
 }
 
-const Drawer: React.FC<Props> = ({ isOpen, onClose, location, navList }) => {
+const Drawer: React.FC<Props> = ({ isOpen, onClose, navList }) => {
   const drawerScrollHandler = () => {
     onClose();
     scrollToTop(50, 10);
@@ -28,7 +27,7 @@ const Drawer: React.FC<Props> = ({ isOpen, onClose, location, navList }) => {
         {navList.map((item) => (
           <li key={nanoid()}>
             <NavLink
-              to={location.pathname !== item.link ? item.link : ''}
+              to={item.link}
               className={({ isActive }) => (isActive ? styles.active : undefined)}
               onClick={() => drawerScrollHandler()}
             >

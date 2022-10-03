@@ -2,12 +2,12 @@
 @import 'styles/variables.scss';
 
 .wrapper {
-  width: 84vw;
+  width: 84%;
   margin: 0 auto;
   background-image: url('../../images/forex.jpg');
 
   @include media($tablet) {
-    width: 94vw;
+    width: 94%;
   }
 
   .selectWrapper {

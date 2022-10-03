@@ -25,7 +25,6 @@ const RatesTable: React.FC<Props> = ({ options, rates, base, onUpdate }) => {
           options={options as OptionsOrGroups<Option, any>}
           onChange={handleChange}
           isSearchable
-          isClearable
         />
       </div>
       <div className={styles.tableWrapper}>

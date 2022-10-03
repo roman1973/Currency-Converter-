@@ -52,7 +52,6 @@ const CurrencyConverter: React.FC<Props> = ({ options }) => {
               options={options as OptionsOrGroups<Option, any>}
               onChange={(option) => dispatch(fromUpdate((option as Option)?.value))}
               isSearchable
-              isClearable
             />
           </div>
           <span className={styles.word}>{'in'}</span>
@@ -64,7 +63,6 @@ const CurrencyConverter: React.FC<Props> = ({ options }) => {
               options={options as OptionsOrGroups<Option, any>}
               onChange={(option) => dispatch(toUpdate((option as Option)?.value))}
               isSearchable
-              isClearable
             />
           </div>
         </div>

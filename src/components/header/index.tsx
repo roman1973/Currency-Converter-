@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { nanoid } from 'nanoid';
 import { useState, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import Logo from 'common/logo';
 import { tablet } from 'constants/dimensions';
@@ -19,7 +19,6 @@ const Header: React.FC = () => {
   const [isShadow, setIsShadow] = useState(false);
 
   const isTablet = useMediaQuery(tablet);
-  const location = useLocation();
 
   const prevScrollPos = useRef(0);
 
@@ -62,7 +61,7 @@ const Header: React.FC = () => {
               {navList.map((item) => (
                 <li key={nanoid()}>
                   <NavLink
-                    to={location.pathname !== item.link ? item.link : ''}
+                    to={item.link}
                     className={({ isActive }) => (isActive ? styles.active : styles.link)}
                     onClick={() => scrollToTop(50, 10)}
                   >
@@ -74,7 +73,7 @@ const Header: React.FC = () => {
           </nav>
         )}
       </div>
-      <Drawer location={location} isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} navList={navList} />
+      <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} navList={navList} />
     </>
   );
 };
